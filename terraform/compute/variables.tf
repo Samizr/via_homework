@@ -16,7 +16,7 @@ variable "ami" {
 
 variable "instance_type" {
   type        = string
-  default     = "t2.micro"
+  default     = "t2.2xlarge"
   description = "Instance type to deploy"
 }
 

@@ -56,3 +56,8 @@ variable "vpc_private_subnets" {
 variable "vpc_global_sg" {
   
 }
+
+output "rds_password" {
+  value = module.rds.db_instance_password
+  sensitive = false
+}

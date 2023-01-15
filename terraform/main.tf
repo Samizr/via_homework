@@ -14,6 +14,7 @@ module "compute" {
   common_tags = local.common_tags
 
   vpc_public_subnets = module.network.vpc_public_subnets
+  vpc_global_sg = module.network.vpc_global_sg
 }
 
 module "data" {
@@ -23,6 +24,7 @@ module "data" {
   availability_zone = local.availability_zone
 
   vpc_private_subnets = module.network.vpc_private_subnets
+  vpc_global_sg = module.network.vpc_global_sg
 }
 
 module "network" {
@@ -31,4 +33,9 @@ module "network" {
   common_tags = local.common_tags
   availability_zone = local.availability_zone
 
+}
+
+output "rds_password" {
+  value = module.data.rds_password
+  sensitive = true
 }

@@ -10,6 +10,7 @@ module "ec2_instance" {
   key_name = aws_key_pair.ec2_key_pair.key_name
 
   tags = var.common_tags
+  vpc_security_group_ids = [var.vpc_global_sg.id]
 }
 
 

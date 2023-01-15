@@ -28,4 +28,6 @@ module "rds" {
   major_engine_version = var.rds_engine_version
 
   vpc_security_group_ids = [var.vpc_global_sg.id]
+
+  skip_final_snapshot = true
 }
